@@ -1,0 +1,161 @@
+<!-- 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rasoi AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Styles/chat.css') }}">
+
+</head>
+<body>
+    <div class="chatbot-container">
+        <div id="header">
+            <h1>Rasoi AI</h1>
+        </div>
+        <div id="chatbot">
+            <div id="conversation">
+              <div class="chatbot-message">
+                <p class="chatbot-text">Hi! 👋 Welcome to Rasoi Maestro, upload a photo or type in the food name to get the recipe</p>
+              </div>
+            </div>
+            <form id="input-form">
+              <message-container>
+                <input id="input-field" type="text" placeholder="Type your message here">
+                <button id="submit-button" type="submit">
+                    <img class="send-icon" src="{{ url_for('static', filename='images/send-message.jpeg') }}" alt="send-message">
+                </button>
+                <label for="file-upload" class="plus-icon">
+                    <img class="send-icon" src="{{ url_for('static', filename='images/plus-icon.png') }}" alt="Upload">
+                </label>
+                <input id="file-upload" type="file" style="display: none;">
+              </message-container>
+            </form>
+        </div>  
+    </div>
+    <script src="{{ url_for('static', filename='Scripts/chatbot.js') }}"></script>
+
+</body>
+</html>-->
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Styles/chat.css') }}">
+</head>
+<body>
+    <div class="chatbot-container">
+        <div id="header">
+            <h1>Rasoi AI</h1>
+        </div>
+        <div id="chatbot">
+            <div id="conversation">
+                <div class="chatbot-message">
+                    <p class="chatbot-text">Hi! 👋 Welcome to Rasoi Maestro, upload a photo or type in the food name to get the recipe</p>
+                </div>
+            </div>
+            <form id="input-form" action="{{ url_for('chatbot') }}" method="post">
+                <message-container>
+                    <input id="input-field" name="user_input" type="text" placeholder="Type your message here">
+                    <button id="submit-button" type="submit">
+                        <img class="send-icon" src="{{ url_for('static', filename='images/send-message.jpeg') }}" alt="send-message">
+                    </button>
+                    <label for="file-upload" class="plus-icon">
+                        <img class="send-icon" src="{{ url_for('static', filename='images/plus-icon.png') }}" alt="Upload">
+                    </label>
+                    <input id="file-upload" type="file" style="display: none;">
+                </message-container>
+            </form>
+            {% if error_message %}
+                <div class="chatbot-message">
+                    <p class="chatbot-text">{{ error_message }}</p>
+                </div>
+            {% endif %}
+            {% if user_input %}
+                <div class="chatbot-message user-message">
+                    <p class="chatbot-text">{{ user_input }}</p>
+                </div>
+            {% endif %}
+            {% if response %}
+                <div class="chatbot-message chatbot">
+                    <p class="chatbot-text">{{ response }}</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Styles/chat.css') }}">
+</head>
+<body>
+    <div class="chatbot-container">
+        <div id="header">
+            <h1>Rasoi AI</h1>
+        </div>
+        <div id="chatbot">
+            <div id="conversation">
+                <div class="chatbot-message">
+                    <p class="chatbot-text">Hi! 👋 Welcome to Rasoi Maestro, upload a photo to get the recipe</p>
+                </div>
+            </div>
+            <form id="input-form" action="{{ url_for('chatbot') }}" method="post" enctype="multipart/form-data">
+                <message-container>
+                    <input id="input-field" name="user_input" type="text" placeholder="Type your message here">
+                    <button id="submit-button" type="submit">
+                        <img class="send-icon" src="{{ url_for('static', filename='images/send-message.jpeg') }}" alt="send-message">
+                    </button>
+                    <label for="file-upload" class="plus-icon">
+                        <img class="send-icon" src="{{ url_for('static', filename='images/plus-icon.png') }}" alt="Upload">
+                    </label>
+                    <input id="file-upload" name="file" type="file" style="display: none;" onchange="this.form.submit()">
+                </message-container>
+            </form>
+            
+            <!-- {% if error_message %}
+                <div class="chatbot-message">
+                    <p class="chatbot-text">{{ error_message }}</p>
+                </div>
+            {% endif %} -->
+            {% if user_input %}
+                <div class="user-message">
+                    <p class="chatbot-text">{{ user_input }}</p>
+                </div>
+            {% endif %}
+            {% if response %}
+                <div class="chatbot-message">
+                    <p class="chatbot-text">{{ response }}</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

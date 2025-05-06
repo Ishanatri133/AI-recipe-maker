@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='Styles/stylesheet.css') }}" />
+        <title>Rasoi Maestro</title>
+</head>
+
+<body>
+    <header class="header">
+        <a href="#" class="logo">Rasoi Maestro</a>
+        <i class="fa-solid fa-bars" id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="{{ url_for('chatbot') }}" >Chat</a>
+            <!-- <a href="chatbot.html">Chat</a> -->
+        </nav>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>Welcome To</h3>
+            <h1>Rasoi Maestro</h1>
+            <h3>And offer services like <span class="multiple-text"></span></h3>
+            <p>
+                We offer a wide range of services to help you with your cooking needs.
+                We have an AI Powered Recipe Chatbot through which you can upload
+                images and get the recipe for your food and solve queries.
+            </p>
+            <div class="social-media">
+                <a href="https://github.com/1Kaustubh122/Customizec_AI_Kitchen_For_India" target="_blank"><i class="fa-brands fa-github"></i></a>
+            </div>
+            <a href="#about" target="" class="btn">Know More</a>
+        </div>
+        <div class="home-img">
+            <img src="{{ url_for('static', filename='images/Profiles.png') }}" alt="Profiles">
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="{{ url_for('static', filename='images/Profile.jpg') }}" alt="Profile" />
+        </div>
+        <div class="about-content">
+            <h2 class="heading">About <span>US</span></h2>
+            <h3>Helping People with Cooking related Services</h3>
+            <p>
+                Transform your cooking experience with Rasoi AI, your ultimate kitchen companion. This intelligent
+                software leverages cutting-edge large language models (LLM) and advanced image recognition technology to
+                provide personalized assistance, making your culinary journey effortless and enjoyable. Simply upload
+                images of your ingredients, and Rasoi AI will analyze them to suggest delicious recipes tailored to your
+                preferences and skill level. Receive detailed, step-by-step cooking instructions in real-time, ensuring
+                every dish is perfect. Additionally, by snapping a photo of your pantry or fridge, Rasoi AI will
+                identify the ingredients and suggest creative ways to use them. Elevate your cooking with Rasoi AI, your
+                intelligent kitchen assistant.
+            </p>
+            <a href="#" target="_blank"
+                class="btn">Read More</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2024 by TEAM ROBO | All Rights Reserved.</p>
+        </div>
+        <div class="footer-iconTop">
+            <a href="#home"><i class="fa-solid fa-angle-up"></i></a>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="{{ url_for('static', filename='Scripts/main.js') }}"></script>
+</body>
+
+</html>
